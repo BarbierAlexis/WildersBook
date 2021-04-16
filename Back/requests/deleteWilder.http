@@ -1,0 +1,3 @@
+# DELETE
+DELETE http://localhost:3000/api/wilder/delete/6076a0db5c6e52595981c9b5 HTTP/1.1
+

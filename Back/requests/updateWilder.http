@@ -1,0 +1,10 @@
+# UPDATE
+PUT http://localhost:3000/api/wilder/update/6076a0db5c6e52595981c9b5 HTTP/1.1
+content-type: application/json
+
+{
+  "name":"Toto",
+  "city":"Nantes",
+  "skills":[{ "title": "React", "votes": 12 }]
+}
+

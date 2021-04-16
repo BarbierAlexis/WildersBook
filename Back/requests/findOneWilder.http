@@ -1,0 +1,2 @@
+# FINDONE
+GET http://localhost:3000/api/wilder/findOne/6075eef251574719003a7f53 HTTP/1.1

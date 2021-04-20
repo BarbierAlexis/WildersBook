@@ -1,15 +1,13 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import Modal from "@material-ui/core/Modal";
 
-const colors = {
-  primary: "#f76c6c",
-  focus: {
-    h: 45,
-    s: "100%",
-    l: "42%",
-  },
-};
+export const CustomModal = styled(Modal)`
+  display: "flex";
+  align-items: "center";
+  justify-content: "center";
+`;
 
 export const Form = styled.form`
   display: grid;
@@ -17,7 +15,7 @@ export const Form = styled.form`
   grid-gap: 0.5rem;
   background-color: #e9f2fd;
   padding: 1rem;
-  width: 80vw;
+  width: 30vw;
 `;
 
 export const Label = styled.label`
@@ -26,35 +24,13 @@ export const Label = styled.label`
   line-height: 1;
 `;
 
-const focus = `
-:focus {
-    border-color: hsl(${colors.focus.h}, ${colors.focus.s}, ${colors.focus.l});
-    box-shadow: 0 0 0 3px
-      hsla(
-        ${colors.focus.h},
-        ${colors.focus.s},
-        calc(${colors.focus.l} + 40%),
-        0.8
-      );
-    outline: 3px solid transparent;
-  }`;
-
 export const Input = styled(TextField)`
   width: 18rem;
   margin-bottom: 13rem;
 `;
 
-const rotate = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-`;
-
-export const NewButton = styled(Button)`
-  width: 100%;
+export const CustomButton = styled(Button)`
+  width: ${(props) => props.width};
   background-color: #f76c6c !important;
 `;
 

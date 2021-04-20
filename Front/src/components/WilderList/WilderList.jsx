@@ -4,7 +4,6 @@ const WilderList = (wilders) => {
   return (
     <List>
       {Object.values(wilders).map((wilder) => {
-        console.log(wilder);
         return <WilderCard key={wilder._id} {...wilder} />;
       })}
     </List>

@@ -1,7 +1,7 @@
-const WilderModel = require("../models/Wilder");
-const asyncHandler = require("express-async-handler");
+import WilderModel from "../models/Wilder";
+import asyncHandler from "express-async-handler";
 
-module.exports = {
+export default {
   create: asyncHandler(async (req, res) => {
     await WilderModel.init();
     const wilder = new WilderModel(req.body);

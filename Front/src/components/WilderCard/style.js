@@ -7,6 +7,10 @@ import {
   CardActions,
 } from "@material-ui/core";
 
+export const SkillList = styled.ul`
+  list-style: none;
+`;
+
 export const Card = styled(CardBase)`
   width: 12rem;
 `;

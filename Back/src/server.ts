@@ -1,20 +1,19 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const WilderModel = require("./models/Wilder");
-const createWilderController = require("./controllers/createWilder");
-const findAllWildersController = require("./controllers/findAllWilders");
-const findOneWildersController = require("./controllers/findOneWilder");
-const updateWilderController = require("./controllers/updateWilder");
-const deleteWilderController = require("./controllers/deleteWilder");
+import express, { Request, Response, NextFunction} from "express";
+import mongoose from "mongoose";
+import cors from "cors";
+import createWilderController from "./controllers/createWilder";
+import findAllWildersController from "./controllers/findAllWilders";
+import findOneWildersController from "./controllers/findOneWilder";
+import updateWilderController from "./controllers/updateWilder";
+import deleteWilderController from "./controllers/deleteWilder";
 const app = express();
-const cors = require("cors");
 
 //Middleware
 app.use(express.json());
 app.use(cors());
 
-function runAsyncWrapper(callback) {
-  return function (req, res, next) {
+function runAsyncWrapper(callback: any) {
+  return function (req:Request, res:Response, next:NextFunction) {
     callback(req, res, next).catch(next);
   };
 }
@@ -52,7 +51,7 @@ mongoose
     autoIndex: true,
   })
   .then(() => console.log("Connected to database"))
-  .catch((err) => console.log(err));
+  .catch((err: any) => console.log(err));
 
 //Start Server
 app.listen(5000, () => console.log("Server started on 5000"));

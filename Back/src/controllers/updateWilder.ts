@@ -1,7 +1,7 @@
-const WilderModel = require("../models/Wilder");
-const asyncHandler = require("express-async-handler");
+import WilderModel from "../models/Wilder";
+import asyncHandler from "express-async-handler";
 
-module.exports = {
+export default {
   update: asyncHandler(async (req, res) => {
     const result = await WilderModel.findByIdAndUpdate(req.params.id, {
       name: req.body.name,

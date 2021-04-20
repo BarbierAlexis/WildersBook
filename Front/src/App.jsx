@@ -21,11 +21,18 @@ function App() {
   }, []);
 
   return (
-    <Div>
+    <>
       <Header />
-      <WilderList {...wilders} />
-      <AddWilder />
-    </Div>
+      <Div>
+        <WilderList
+          {...wilders}
+        />
+        <AddWilder
+        onSuccess={(newWilder) => {
+          setWilders([{...newWilder}, ...wilders]);
+        }}/>
+      </Div>
+    </>
   );
 }
 
